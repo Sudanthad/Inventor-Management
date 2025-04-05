@@ -1,0 +1,33 @@
+<div class="flex m-auto h-screen justify-center  ">
+<form class="p-4 rounded-lg border w-1/3 m-auto" (ngSubmit)="registerForm()">
+<h1 class="text-center text-xl">Register</h1>
+<div class="my-4  ">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="register.userName"  class="mx-2 p-2 rounded border w-full" placeholder="Email Address">
+</div>
+<div class="my-4">
+    <label for="email">Password</label>
+    <input type="password"  name="password" [(ngModel)]="register.userPassword" id="password" class="mx-2 p-2 rounded border w-full" placeholder="Password">
+
+</div>
+
+<div class="my-4">
+    <label for="email">First Name</label>
+    <input type="text" name="firstName" [(ngModel)]="register.userFirstName" id="firstName" class="mx-2 p-2 rounded border w-full" placeholder="Enter First Name">
+</div>
+
+<div class="my-4">
+    <label for="email">Last Name</label>
+    <input type="text" name="lastName" [(ngModel)]="register.userLastName"  id="lastName"  class="mx-2 p-2 rounded border w-full" placeholder="Enter Last Name">
+</div>
+
+<div class="my-5">
+    <input type="submit" class="p-2 w-full bg-blue-700 text-white hover:bg-blue-900">
+</div>
+<div>
+    <p >Already Sign Up ? <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" [routerLink]="['/login']">Log in!</a></p>
+
+    </div>
+</form>
+
+</div>

@@ -1,0 +1,64 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+  <form 
+    #loginForm="ngForm"
+    (ngSubmit)="login(loginForm)"
+    class="w-full max-w-md bg-white rounded-lg shadow-md overflow-hidden p-8 space-y-6"
+  >
+    <!-- Header -->
+    <div class="text-center">
+      <h1 class="text-3xl font-bold text-gray-800">Welcome Back</h1>
+      <p class="text-gray-500 mt-2">Sign in to access your account</p>
+    </div>
+
+    <!-- Email Field -->
+    <div class="space-y-2">
+      <label for="userName" class="block text-sm font-medium text-gray-700">Username</label>
+      <input
+        type="text"
+        id="userName"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+        placeholder="Enter your username"
+        [(ngModel)]="userName"
+        name="userName"
+        required
+      />
+    </div>
+
+    <!-- Password Field -->
+    <div class="space-y-2">
+      <label for="userPassword" class="block text-sm font-medium text-gray-700">Password</label>
+      <input
+        type="password"
+        id="userPassword"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+        placeholder="Enter your password"
+        [(ngModel)]="userPassword"
+        name="userPassword"
+        required
+      />
+    </div>
+
+    <!-- Remember Me & Forgot Password -->
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+        <label for="remember-me" class="ml-2 block text-sm text-gray-600">Remember me</label>
+      </div>
+      <a href="#" class="text-sm text-blue-600 hover:text-blue-500">Forgot password?</a>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300"
+    >
+      Sign In
+    </button>
+
+    <!-- Sign Up Link -->
+    <div class="text-center text-sm text-gray-600">
+      Don't have an account? 
+      <a [routerLink]="['/register']" class="text-blue-600 hover:text-blue-500 font-medium">Sign up</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,157 @@
+<!-- Success Message (Improved) -->
+<div *ngIf="isAdded" @fadeInOut
+     class="fixed top-4 right-4 z-50 w-80">
+  <div class="flex items-center bg-gradient-to-r from-green-400 to-green-500 text-white font-medium px-6 py-4 rounded-xl shadow-xl border-l-4 border-green-600">
+    <!-- Animated Checkmark -->
+    <div class="relative mr-3">
+      <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="12" fill="white" fill-opacity="0.2"/>
+        <path d="M7 13L10 16L17 9" stroke="currentColor" stroke-width="2" 
+              stroke-linecap="round" stroke-linejoin="round"
+              [@drawCheckmark]="isAdded ? 'visible' : 'hidden'"/>
+      </svg>
+    </div>
+    
+    <div>
+      <p class="font-bold text-lg">Success!</p>
+      <p class="text-sm opacity-90"> Update successfully</p>
+      
+    </div>
+    
+    <!-- Progress Bar -->
+    <div class="absolute bottom-0 left-0 h-1 bg-white bg-opacity-30 w-full overflow-hidden rounded-b-xl">
+      <div class="h-full bg-white bg-opacity-70" [@progressBar]></div>
+    </div>
+  </div>
+</div>
+
+<!-- Compact Form Dialog -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-40">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-md transform transition-all duration-300 scale-95 hover:scale-100">
+    <!-- Header -->
+    <div class="bg-blue-500 px-6 py-4 rounded-t-xl flex justify-between items-center">
+      <h2 class="text-xl font-bold text-white">Update Item</h2>
+      <button (click)="closeDialog()" class="text-white hover:text-blue-200 focus:outline-none">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <!-- Form Body -->
+    <form class="p-6 space-y-4 max-h-[70vh] overflow-y-auto" (ngSubmit)= inOutUpdate()>
+      <div class="grid grid-cols-1 gap-4">
+
+
+        <!-- Item Id -->
+         <!-- Item Name -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Item Id</label>
+          <input
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            placeholder="Item name"
+            [(ngModel)]="inoutu.id"
+            name="id"
+            required
+          >
+        </div>
+        <!-- Item Name -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Item Name</label>
+          <input
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            placeholder="Item name"
+            [(ngModel)]="inoutu.itemName"
+            name="itemName"
+            required
+          >
+        </div>
+
+        <!-- Item Location -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+          <input
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            placeholder="Storage location"
+            [(ngModel)]="inoutu.itemLocation"
+            name="itemLocation"
+          >
+        </div>
+
+        <!-- Two-column fields -->
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Serial Number -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Serial #</label>
+            <input
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+              placeholder="SN-0001"
+              [(ngModel)]="inoutu.serialNumber"
+              name="serialNumber"
+            >
+          </div>
+
+          <!-- Asset Number -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Asset #</label>
+            <input
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+              placeholder="AST-100"
+              [(ngModel)]="inoutu.assetNumber"
+              name="assetNumber"
+            >
+          </div>
+        </div>
+
+        <!-- POD Number -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">POD Number</label>
+          <input
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            placeholder="POD-2023"
+            [(ngModel)]="inoutu.podNumber"
+            name="podNumber"
+          >
+        </div>
+
+        <!-- Date Picker -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+          <div class="relative">
+            <input
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+              placeholder="Select date"
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="inoutu.date"
+              name="date"
+            >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Footer -->
+      <div class="flex justify-end space-x-3 pt-4">
+        <button (click)="closeDialog()"
+          type="button"
+          class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+        >
+          Update Item
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
