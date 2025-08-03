@@ -8,10 +8,8 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AuthGuard } from './auth/auth.guard';
 import { HeaderComponent } from './header/header.component';
-import { InoutComponent } from './dashboard/admin-dashboard/admin-content/inout/inout.component';
 import { LaptopComponent } from './dashboard/admin-dashboard/admin-content/laptop/laptop.component';
-import { BackupComponent } from './dashboard/admin-dashboard/admin-content/backup/backup.component';
-import { PrinterComponent } from './dashboard/admin-dashboard/admin-content/printer/printer.component';
+
 
 
 // import { AuthGuard } from './auth/auth.guard';
@@ -27,10 +25,10 @@ const routes: Routes = [
     path: 'admin',
     component: AdminDashboardComponent,
     children: [
-      { path: 'inandout', component: InoutComponent}, // Child route
+     
       { path: 'laptop', component: LaptopComponent }, // Child route
-      { path: 'backup', component: BackupComponent }, // Child route
-      { path: 'printer', component: PrinterComponent }, // Child route
+
+    
     ],
 
     canActivate: [AuthGuard],

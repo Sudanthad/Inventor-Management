@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   login(loginForm: NgForm) {
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.userAuthService.setToken(response.jwtToken);
 
           const role = response.user.role[0].roleName;
-          const redirectPath = role === 'ADMIN' ? '/admin/inandout' : '/user';
+          const redirectPath = role === 'ADMIN' ? '/admin/laptop' : '/user';
           this.router.navigate([redirectPath]);
         });
       },

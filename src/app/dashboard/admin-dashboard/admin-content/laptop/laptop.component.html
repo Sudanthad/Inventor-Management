@@ -1,0 +1,134 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="px-6 py-4 border-b border-gray-200 bg-gray-50 flex justify-between items-center">
+      <h2 class="text-xl font-semibold text-gray-800">Laptop Scan</h2>
+      <div class="flex space-x-2">
+        <!-- <button (click)="openDialog()" class="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition">
+          Add New
+        </button> -->
+        <button class="px-3 py-1 border border-gray-300 text-gray-700 text-sm rounded hover:bg-gray-50 transition">
+          Export
+        </button>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto rounded-lg shadow-sm border border-gray-100">
+      <table class="min-w-full bg-white">
+        <thead class="bg-blue-400">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-center text-xs font-semibold text-white uppercase tracking-wider">
+              Id
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              Branch Name
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              Location
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Owner EPF
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Device Type
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Serial No.
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Asset No.
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Status
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Owner Name
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              User Status
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Designation
+            </th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-white uppercase tracking-wider">
+              Qr Status
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr *ngFor="let laptop of this.laptop" class="hover:bg-gray-50 transition">
+            <td class="px-6 py-4 whitespace-nowrap text-center">
+              <div class="text-sm font-medium text-gray-900">
+                {{laptop.id}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-left">
+              <div class="text-sm text-gray-900">
+                {{laptop.branch}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-left">
+              <div class="text-sm text-gray-900">
+                {{laptop.location}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.deviceOwnerEPF}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.deviceType}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.serialNumber}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.assetNumber}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.status}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.deviceOwnerName}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.userStatus}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right">
+              <div class="text-sm text-gray-900">
+                {{laptop.designation}}
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+              <button (click)="laptopDialogUpdate(laptop)" class="text-blue-600 hover:text-blue-900 mr-3">Scan</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="px-3 py-2 border-t border-gray-200 bg-gray-50 flex items-center justify-between">
+      <div class="flex-1 flex justify-between">
+        <button class="relative inline-flex items-center px-2 py-1 border border-gray-300 text-xs rounded text-gray-700 bg-white hover:bg-gray-50">
+          Previous
+        </button>
+        <button class="ml-2 relative inline-flex items-center px-2 py-1 border border-gray-300 text-xs rounded text-gray-700 bg-white hover:bg-gray-50">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

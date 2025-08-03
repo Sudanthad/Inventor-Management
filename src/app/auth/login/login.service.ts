@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { UserAuthService } from '../user-auth.service';
 import { Register } from '../register/register';
 import { catchError, map, Observable } from 'rxjs';
-import {Inout} from 'src/app/dashboard/admin-dashboard/admin-content/inout/inout';
-import { StandResponse, PaginatedInAndOutDTO } from 'src/app/dashboard/admin-dashboard/admin-content/printer/printer';
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -31,13 +31,7 @@ export class LoginService {
       { headers: this.requestHeader }
     );
   }
-  public inoutRegister(inout: Inout): Observable<Inout> {
-    return this.httpClient.post<Inout>(
-      `${this.BASE_URL}/inout/create_inout`,
-      inout,
-      { headers: this.requestHeader }
-    );
-  }
+ 
 
   //get data
 

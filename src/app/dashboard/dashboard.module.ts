@@ -12,9 +12,7 @@ import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { InoutComponent } from './admin-dashboard/admin-content/inout/inout.component';
 import { LaptopComponent } from './admin-dashboard/admin-content/laptop/laptop.component';
-import { BackupComponent } from './admin-dashboard/admin-content/backup/backup.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -28,24 +26,29 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialogFormComponent } from './admin-dashboard/admin-content/backup/mat-dialog-form/mat-dialog-form.component';
-import { AddItemComponent } from './admin-dashboard/admin-content/inout/add-item/add-item.component';
-import { UpdateItemComponent } from './admin-dashboard/admin-content/inout/update-item/update-item.component';
+
+
+import { UpdateLaptopComponent } from './admin-dashboard/admin-content/laptop/update/update-laptop/update-laptop.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     UserDashboardComponent,
     AdminDashboardComponent,
-    InoutComponent,
+ 
     LaptopComponent,
-    BackupComponent,
-    MatDialogFormComponent,
-    AddItemComponent,
-    UpdateItemComponent,
+
+
+    
+   
+  
   ],
   imports: [
     FormsModule,
-    MatPaginatorModule,MatDialogModule,
+    MatPaginatorModule,
+    MatDialogModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
@@ -61,6 +64,8 @@ import { UpdateItemComponent } from './admin-dashboard/admin-content/inout/updat
     MatNativeDateModule,
     MatTableModule,
     CommonModule,
+    ZXingScannerModule,
+    MatProgressSpinnerModule,
   ],
 
   providers: [
@@ -70,6 +75,5 @@ import { UpdateItemComponent } from './admin-dashboard/admin-content/inout/updat
       deps: [Overlay],
     },
   ],
- 
 })
 export class DashboardModule {}

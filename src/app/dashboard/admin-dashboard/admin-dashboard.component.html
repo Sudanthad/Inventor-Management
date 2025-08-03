@@ -1,16 +1,21 @@
-<mat-toolbar color="primary" role="heading" class="header-toolbar">
+<mat-toolbar color="primary" class="black-toolbar">
   <button mat-icon-button (click)="nav.toggle()" aria-label="Toggle menu">
     <mat-icon>menu</mat-icon>
   </button>
-  
+
   <div class="logo">
-    <span class="logo-main">Admin</span>
-    <span class="logo-sub">Dashboard</span>
+    <span class="logo-main">Admin Dashboard</span>
+    
   </div>
 
   <div class="spacer"></div>
 
-  <button mat-icon-button (click)="logout()" aria-label="Logout" class="logout-btn">
+  <button
+    mat-icon-button
+    (click)="logout()"
+    aria-label="Logout"
+    class="logout-btn"
+  >
     <!-- <mat-icon>logout</mat-icon> -->
   </button>
 </mat-toolbar>
@@ -21,9 +26,9 @@
       <!-- Section 1 -->
       <div class="nav-section">
         <h3 class="section-label">Inventory Management</h3>
-        <a mat-list-item [routerLink]="['inandout']" class="nav-item">
+        <a mat-list-item [routerLink]="[]" class="nav-item">
           <mat-icon class="nav-icon">compare_arrows</mat-icon>
-          <span class="nav-text">In and Out</span>
+          <span class="nav-text">Inventory</span>
         </a>
       </div>
 
@@ -34,41 +39,37 @@
           <mat-icon class="nav-icon">laptop_windows</mat-icon>
           <span class="nav-text">Laptop</span>
         </a>
-        
+
         <a mat-list-item [routerLink]="['printer']" class="nav-item">
           <mat-icon class="nav-icon">print</mat-icon>
           <span class="nav-text">Printer</span>
         </a>
-		  <a mat-list-item [routerLink]="['backup']" class="nav-item">
+        <a mat-list-item [routerLink]="['backup']" class="nav-item">
           <mat-icon class="nav-icon">backup</mat-icon>
           <span class="nav-text">Backup</span>
         </a>
       </div>
 
-
       <div class="nav-section">
         <h3 class="section-label">SUPPLIER</h3>
         <a mat-list-item [routerLink]="['backup']" class="nav-item">
-       <mat-icon class="nav-icon">local_shipping</mat-icon> <!-- Material icon for suppliers -->
+          <mat-icon class="nav-icon">local_shipping</mat-icon>
+          <!-- Material icon for suppliers -->
           <span class="nav-text">Supplier</span>
-		  
         </a>
-		 <a mat-list-item [routerLink]="['backup']" class="nav-item">
-    <mat-icon class="nav-icon">insert_chart</mat-icon> <!-- For analytics -->
+        <a mat-list-item [routerLink]="['backup']" class="nav-item">
+          <mat-icon class="nav-icon">insert_chart</mat-icon>
+          <!-- For analytics -->
           <span class="nav-text">Report</span>
-		  
         </a>
       </div>
-
 
       <div class="nav-section bottom-section">
         <a mat-list-item class="nav-item" (click)="logout()">
           <mat-icon class="nav-icon">logout</mat-icon>
           <span class="nav-text">Logout</span>
         </a>
-        <div class="footer-note">
-          Managed by Admin
-        </div>
+        <div class="footer-note">Managed by Admin</div>
       </div>
     </mat-nav-list>
   </mat-sidenav>
